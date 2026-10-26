@@ -17,7 +17,7 @@ Deliver five usable increments. Slice 1 includes foundation/TypeScript setup ins
 
 This groups WA-03's suggested foundation, engine, question/STOP, fixture, UI, testing, and documentation tasks into working behaviors rather than postponing a usable app until the UI stage. Approved mathematics, input limits, local-only operation, and POC boundaries stay intact.
 
-Each verification command below is a future build obligation. None has been executed or passed at this documentation checkpoint. Expected fixture numbers are acceptance assertions, never production input or hardcoded UI results. Tests belong alongside the slice that introduces behavior; final checks do not substitute for early verification.
+The per-slice contracts below preserve the original approved plan. WA-05 reconciles them against the accepted current candidate: completion notes distinguish implementation, fresh checks, current PO acceptance, and declared delivery/verification limits. Original planned work is not retroactively claimed as performed. Expected fixture numbers remain test assertions, never production data.
 
 ### Quick Review
 
@@ -33,9 +33,11 @@ The subsequent WA-03 BUILD EXECUTION mission explicitly approves this checklist 
 
 ## Slices
 
-Current execution: Slice 1 verified and committed as `1a83621`; box marked complete immediately afterward. Slice 2 code and mechanical verification are ready (68 unit tests and4 Chromium tests passed, plus typecheck/build). Actual PO hands-on feedback is pending at Checkpoint 1; keep slice 2 and its learner checkpoint unchecked, do not make its closing commit or begin slice 3 yet. See `../docs/checkpoint-1.md` and `../docs/build-progress.md`.
+Current execution — WA-05, 2026-10-26: clean public-baseline reproduction passed npm ci, typecheck, 68 unit tests, production build, browser setup, and 9 browser tests. The 5/1 reversal and opposite 0/5 scenario passed. Original project history and the filtered public snapshot are separate; original commit IDs below are provenance, not public-history commits. See [WA-05 evidence](../docs/WA-05-verification.md) and [demo steps](../docs/demo.md).
 
-WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, superseding the earlier no-VESTA restriction only for that named preview. The official hostname/DNS were subsequently approved; the isolated preview is now live at https://worthasking.neovantia.live/ after DNS, strict HTTPS, public static-flow verification, and preview-only rollback rehearsal passed. Existing services were preserved. Evidence is recorded in `../docs/WA-04-preview.md`. This approval does not substitute for actual PO feedback or close Slice 2/final review.
+Alonso replied **“adelante”** to the current-candidate acceptance question after the VESTA flow/app-map reference and explicit disclosure of the missing full MethodDetails panel and unmeasured 4096-scenario timing. This is the current acceptance disposition, not invented retrospective feedback or a full manual test transcript. The candidate is accepted for 6-ship preparation with recorded limits. Checked slice headings below record this accepted delivery, not a claim that every original planned sub-item was implemented or tested.
+
+WA-04/WA-UX-01 authorized the existing isolated VESTA PREVIEW only. WA-05 makes no deployment, environment, engine, fixture, or UX change. The public executable bundle and CSS match the clean build; HTML/SVG differ only by normalized line endings. No final-release or Devpost-submission completion is inferred.
 
 - [x] **1. Compare two offers and see whether uncertainty can change the choice**
   Becomes usable: A local English-language React workspace can load the illustrative job offers, show known/unknown inputs and actual weighted provisional scores, and report the full attainable score-gap range with conditional stability advice. Changing importance or a plausible range recalculates it; invalid edits withhold current advice.
@@ -47,7 +49,8 @@ WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, supers
   Learner check: Once running, open `http://127.0.0.1:5173`, load the example, inspect the 63/53 comparison and uncertainty range, then change a criterion's importance. Enter an invalid range and confirm the current recommendation disappears with a clear correction. In FAST mode this check is available for early inspection; the planned feedback pause is after slice 2 when the core journey is complete.
   Commit: `feat: compare job offers with exact utility and robust bounds`
 
-- [ ] **2. Ask the highest-value question and update evidence to a calculated decision**
+- [x] **2. Ask the highest-value question and update evidence to a calculated decision**
+  WA-05 closure evidence: existing implementation and fresh clean-copy tests reproduce 63/53, office VOI 7.50, 5/1 → 43/65 and [-24,-20], partial evidence, invalid answers, ties/reproducibility, and opposite 0/5 → 83/33. Actual earlier readability feedback is recorded; Alonso accepted the current candidate with “adelante” in WA-05. No earlier core-flow hands-on report or closing date is invented.
   Becomes usable: The core journey works end to end: the app derives the top question, accepts office-attendance evidence or a partial answer, compares before/after results, and reaches a calculated reversal and justified DECIDE NOW while other unknowns remain.
   Why now: Proves Worth Asking's distinctive question-and-stopping loop early and creates the hands-on checkpoint before refinement. Uses the real engine and fixture instead of leaving their integration to the end.
   PRD ref: `prd.md > The Core Journey` (steps 5–8), `Features and Behavior > Question Value and Priority`, `Features and Behavior > Update Your Evidence and Compare`, `Features and Behavior > Stopping Logic`, `Acceptance and Demonstration`.
@@ -57,7 +60,8 @@ WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, supers
   Learner check: At the early feedback checkpoint, start the dev server, load the example, read why office attendance is worth asking, enter A=5 and B=1, and inspect the reversal and DECIDE NOW explanation. Reload and try one partial answer. Report what felt clear, confusing, or different from the intended experience; do not infer this feedback from agent-only browser tests.
   Commit: `feat: prioritize questions and recalculate decisions from evidence`
 
-- [ ] **3. Inspect the reasoning and correct incomplete or conflicting evidence**
+- [x] **3. Inspect existing reasoning/correction controls — accepted delivery limits**
+  WA-05 closure disposition: provenance, assumed-weight/loss disclosure, conditional advice, and correction paths exist and are verified. The originally planned full MethodDetails/contribution panel is absent. Alonso accepted the current candidate after that limitation was explicitly disclosed; it is deferred from this submission candidate, not marked as implemented. The historical original contract follows for traceability.
   Becomes usable: The user can understand facts, estimates, assumptions, hypothetical-answer weights, exact calculations, and conditional recommendations, and can correct invalid or out-of-assumed-range evidence without losing the last valid comparison. The five requested sections form one coherent premium workspace.
   Why now: Builds on the working core and actual early feedback to make its reasoning understandable and its error paths safe. This refines the approved experience without adding dashboards, history, or model features.
   PRD ref: `prd.md > Screens and Layout`, `Look and Feel`, `Features and Behavior > Your Decision and Evidence`, `Features and Behavior > Question Value and Priority`, `Features and Behavior > Decision Readiness`, `Features and Behavior > Update Your Evidence and Compare`, `States and Boundaries`.
@@ -67,7 +71,8 @@ WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, supers
   Learner check: Open the calculation disclosure, identify which entries are facts, assumptions, or midpoint estimates, and explain why the final result depends on the supplied ranges. Try an answer outside an assumed range, correct the range explicitly, and confirm the app then recalculates. In FAST mode the learner may inspect this during progress; it must be included in the final hands-on review.
   Commit: `feat: explain decision assumptions and validate evidence corrections`
 
-- [ ] **4. Complete the decision smoothly on desktop and mobile with measured calculation limits**
+- [x] **4. Verify the responsive current candidate — declared verification limits**
+  WA-05 closure disposition: fresh browser checks passed at 1440/390/320px, with desktop resize/keyboard and emulated touch coverage. Physical mobile, a full extended accessibility audit, and the 4096-world production timing protocol are not claimed. Unmeasured maximum-size performance was explicitly disclosed before Alonso accepted this candidate. The original performance/a11y contract remains below as history; no passing measurements are invented.
   Becomes usable: The complete decision journey, awkward-input recovery, and explanations are readable and operable across the approved viewport sizes, with measured evaluator performance through the supported 4096-world model and verified local credential-free operation.
   Why now: The full evaluator and presentation are available, so performance and cross-device findings measure the actual product and can still be fixed before documentation and recording. Full-range stopping semantics remain unchanged by optimization.
   PRD ref: `prd.md > Look and Feel`, `Screens and Layout`, `States and Boundaries`, `Acceptance and Demonstration`, `Non-Goals`.
@@ -77,7 +82,8 @@ WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, supers
   Learner check: Try the full journey on a desktop and mobile-sized view, including evidence edits, expanded reasoning, and correction of an error. Confirm the question, score changes, controls, and stopping explanation stay usable. This is part of the final learner exploration unless a distinct usability issue warrants earlier feedback.
   Commit: `test: verify responsive decision flow and maximum scenario performance`
 
-- [ ] **5. Run a clean local setup and rehearse the judge demonstration**
+- [x] **5. Reproduce clean setup and prepare the exact existing demonstration**
+  WA-05 closure evidence: a fresh disposable public-baseline copy passed the documented commands and 9 browser checks; docs/demo.md records real controls, reset behavior, current assumptions, computed outcomes, and limitations. The static app map was generated and checked. Current PO acceptance is separately recorded below; no completed video or submission is claimed.
   Becomes usable: A judge can follow verified installation/run/testing instructions, reproduce the reversal-and-stop example without credentials, and understand the model's assumptions and actual AI-development role. The project is ready for final learner review and subsequent recording preparation.
   Why now: Document observed behavior and measured setup after the working implementation has been validated, then use that documentation for the final rehearsal rather than promising untested instructions.
   PRD ref: `prd.md > The Core Journey`, `What We're Building`, `Acceptance and Demonstration`, `Deferred From the POC`, `Non-Goals`.
@@ -89,36 +95,26 @@ WA-04 explicitly authorizes an isolated VESTA preview as a separate gate, supers
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 2 mechanical checks, before its commit: Alonso starts/opens the app, tries the computed question→evidence→reversal→stop loop and a partial answer, and reports feedback. Resolve issues and record the actual outcome before marking complete.
-- [ ] Final kick-the-tires exploration and feedback completed — after slice 5 and before final readiness: Alonso uses verified instructions and explores the whole desktop/mobile journey, methodology, invalid input, and tie/inconclusive behavior. Record actual feedback; agent-only tests do not satisfy this checkpoint.
-
-No separate middle review is planned; add one only for distinct useful feedback or a consequential change. FAST mode continues through noncheckpoint slices after verification and commits. For every completed slice inspect the intended staged diff for secrets/private context/unrelated files, stage explicit paths only, commit with its recorded message, and immediately mark its box complete before beginning the next slice. Never mark a failed or unperformed slice complete. Preserve work and repair forward; destructive recovery requires explicit consent.
+- [x] Actual PO feedback reconciled: WA-UX-01 reported readability/offer-context/scroll/resize/mobile concerns. Those changes were implemented before this public baseline and are verified again in WA-05. The early checkpoint is closed now by that real feedback and current acceptance, not by an invented earlier test session.
+- [x] Current candidate acceptance recorded: Alonso replied “adelante” to the acceptance request describing the VESTA 5/1 flow, map, and MethodDetails/performance limitations. This records acceptance; it does not claim a detailed free-exploration, mobile, keyboard, or tie test transcript from the learner.
 
 ## Final Review
 
-- [ ] Agent has summarized actual verification outcomes and remaining material limitations using the current implementation and performance report.
-- [ ] Learner has freely tried the app and reported observations; agreed changes, if any, are recorded here as individual unchecked tasks before implementation of those revisions. "No changes requested" is valid only if actually reported.
-- [ ] Agreed revisions are implemented, relevant checks rerun, changes committed, and the learner has retried the affected behavior. Record actual evidence or an explicit not-applicable result when no revisions are requested.
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship.
-
-No feedback, final readiness, or successful verification is recorded yet. If revisions change behavior, stack, constraints, or the unique kernel, obtain the relevant agreement and update affected planning documents; internal fixes that preserve approved behavior may proceed with a recorded reason. Revisions do not authorize scope expansion or VESTA deployment.
+- [x] Agent summarized actual fresh clean-copy checks and material delivery/verification limits; see docs/WA-05-verification.md.
+- [x] Actual prior product feedback and current acceptance are recorded separately from automated tests and architecture PASS.
+- [x] Earlier agreed WA-UX-01 presentation changes exist and their tests pass. No further product revisions were requested in the WA-05 acceptance reply; no learner retrial transcript beyond that reply is invented.
+- [x] Final current-candidate readiness for shipping preparation: Alonso's “adelante”, after explicit disclosure of the missing full MethodDetails panel and unmeasured 4096-world performance. This is an accepted-candidate exception to the historical larger plan, not a claim that the missing work was performed.
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap.
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate.
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse.
+- [x] Brief static evidence-based recap delivered: evidence validation → reevaluation → separate question-value and full-range STOP paths → result UI. No completed guided hands-on coding tour is claimed.
+- [x] Optional edit/transfer reflection addressed: editing is not applicable under WA-05's explicit freeze; reflection was offered, with no personal answer or learning outcome inferred.
+- [x] devpost/app-map.html generated from real symbols, source/demo links checked, rendered offline with JavaScript disabled at 1440/320px, and visually inspected. Screenshot/reference made available in the review conversation; editor opening was queued. No claim that the learner visited every source file.
 
-Activity and evidence: Not performed. After final revisions, use a brief 3–5 minute wrap-up grounded in the real office-attendance update or the independent robust STOP calculation. Personal coding background remains not established; offer the guided route by default and adapt to demonstrated needs. Prior meaningful practice counts; do not repeat it as a mandatory exercise.
-
-Route and stops: Planned reference-only route is evidence transaction → evaluator/question/bounds functions → recommendation display, using real paths and symbols only once implemented. Record actual stops/activity here; do not imply planned files already exist.
-
-Edit outcome: Not offered or performed yet. A tiny change is optional and must not expand scope; record kept/reverted/declined/not applicable and recheck any actual change.
-
-Reflection: Not offered yet. Optional answer belongs only in ignored `devpost/learner-profile.md`; record only offered/answered/declined/already covered here. No quiz or claimed mastery.
-
-Activity mode: Pending finished app and final review. Prefer live app/editor; disclose any necessary static fallback. Generate/inspect/show the compact app map from finished code and include one reusable practice tied to an actual verified project moment. Commit these completion artifacts and the completed checklist with explicit reviewed paths; do not claim build completion until this section and Final Review are genuinely complete.
+Activity mode: static recap/reference map. Source snapshot: public 33c4536, equivalent application source to existing tested WA-UX-01 candidate 549950d. Reusable practice: assert both a transition and its opposite before claiming dynamic behavior; separately test combined uncertainty so question scenarios cannot justify a false robust STOP. No learner-profile material is published.
 
 ## Revisions
 
 - Evidence transactions are isolated in `src/engine/evidence.ts` — a pure validation/update boundary allows testing partial answers and rejection of out-of-assumed-range values without UI state mutation. This is an internal file-organization clarification; approved behavior, mathematics, and scope are unchanged.
+
+- WA-05 (2026-10-26): reconciled the original plan against verified public source and fresh clean-copy results; recorded actual WA-UX-01 feedback and Alonso's current “adelante” acceptance; provided the static recap/map. The declared MethodDetails/performance gaps are accepted limitations of this candidate; remaining test-coverage limits are stated accurately. No application, mathematics, fixture, UX, environment, or VESTA change. Video, learner-written fields/exit survey, and submission remain 6-ship tasks.

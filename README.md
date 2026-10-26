@@ -40,8 +40,11 @@ The tested candidate has 68 unit tests and 9 browser tests, including canonical 
 - [Technical specification](devpost/spec.md)
 - [Build checklist and recorded progress](devpost/checklist.md)
 - [Fixture mathematics](docs/WA-02-fixture-check.md)
+- [Exact demo steps and limitations](docs/demo.md)
+- [App map and source route](devpost/app-map.html)
+- [WA-05 fresh verification and accepted-candidate disposition](docs/WA-05-verification.md)
 
-Developed **with AI using the official Devpost Learn Skill Pack** from https://github.com/challengepost/learn-ai-basics. Installed skills 1-start through 6-ship and their lock file are included. The runtime application makes no generative AI calls. Planning approvals remain separate from build completion: the recorded checklist, hands-on review, and learning/app-map completion must be reconciled before claiming the Skill Pack workflow is complete.
+Developed **with AI using the official Devpost Learn Skill Pack** from https://github.com/challengepost/learn-ai-basics. Installed skills 1-start through 6-ship and their lock file are included. The runtime application makes no generative AI calls. WA-05 records fresh clean-copy checks, the static recap/app map, and Alonso’s acceptance of the current candidate with declared delivery/verification limits. The full MethodDetails panel, 4096-world timing measurement, physical-mobile testing, and full extended accessibility audit are not claimed. GO for 6-ship preparation does not mean the video or Devpost submission is complete.
 
 This publication candidate preserves the application source tested in the VESTA preview (application commit 549950d7caa8a0161a5fbee3334589c7cde2f3ff). It deliberately excludes operational deployment scripts, server inventories, private learner context, local artifacts, and the original operational Git history. Public repository: https://github.com/AlonsoSantamaria/worth-asking. A demo video and the learner's own Devpost answers remain separate submission tasks.
 
