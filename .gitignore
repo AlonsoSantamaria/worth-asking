@@ -1,0 +1,21 @@
+/devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
+*.local
+.DS_Store
+Thumbs.db
+.vitest/
+playwright-report/
+test-results/
+.playwright/
+# Alternate-agent links created by the official skills installer.
+.claude/
+agent/
+deployment/wa04-preview/*.tar.gz
+deployment/wa04-preview/*.zone
+/deployment/wa-ux-01/*.tar.gz
+/deployment/wa-ux-01/public-*.png

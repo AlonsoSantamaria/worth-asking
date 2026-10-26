@@ -1,0 +1,17 @@
+import { useState } from 'react';
+import type { Decision, Question } from '../engine/types';
+import { format } from '../engine/format';
+import { ZERO } from '../engine/rational';
+import { applyEvidence } from '../engine/evidence';
+
+export default function QuestionCard({question,decision,alternatives,onEvidence}:{question:Question;decision:Decision;alternatives:Question[];onEvidence:(d:Decision)=>void}) {
+  const [answers,setAnswers]=useState<Record<string,string>>({});
+  const [errors,setErrors]=useState<string[]>([]);
+  const c=decision.criteria.find(c=>c.id===question.id)!;
+  function submit(e:React.FormEvent) {
+    e.preventDefault();const updated=applyEvidence(decision,question.id,answers);
+    if(!updated.ok){setErrors(updated.issues.map(issue=>issue.message));return;}
+    setErrors([]);setAnswers({});onEvidence(updated.decision);
+  }
+  return <section className="question-panel panel" aria-labelledby="question-title"><div className="question-main"><div className="question-top"><p className="eyebrow">03 / THE QUESTION WORTH ASKING</p><span className="question-symbol" aria-hidden="true">↗</span></div><h2 id="question-title">{question.text}</h2><div className="information-value"><span className="value-spark" aria-hidden="true">✧</span><strong data-testid="question-value">{format(question.value)}</strong><span>utility points of modeled information value</span></div><p className="question-reason">{question.value.cmp(ZERO)>0?'Knowing this answer can change which offer the model prefers and reduce the loss from choosing with incomplete information.':'Remaining uncertainties can change the choice together. This scenario model cannot distinguish a best single question.'}</p><p className="question-assumptions">Value uses symmetric endpoint scenarios with assumed modeling weights, not empirical probabilities. STOP is evaluated independently over the full plausible ranges.</p>{question.tied&&<p className="tie-notice">Tied modeled information value. Shown first by criterion ID for reproducibility; not uniquely best.</p>}<details className="ranked-details"><summary>Why this question comes next</summary><ul>{[question,...alternatives].map(q=><li key={q.id}><span>{decision.criteria.find(c=>c.id===q.id)!.label}</span><strong>{format(q.value)} pts {q.tied?'· tied':''}</strong></li>)}</ul><p>Baseline modeled decision loss: {question.baselineLoss.toString()} points. Remaining loss after this answer: {question.residualLoss.toString()} points. The difference is the value of asking. Full ranges also determine whether each unknown can matter in some allowed setting.</p></details></div><form className="evidence-form" onSubmit={submit}><p className="eyebrow">04 / UPDATE YOUR EVIDENCE</p><h3>Found the answer?</h3><p>Enter what you learned. A blank answer stays unknown.</p>{question.targets.map(id=>{const offer=decision.offers.find(o=>o.id===id)!,cell=c.cells[id];return <label key={id}>{offer.label}<span className="input-unit">{c.unit}</span><input aria-label={`${offer.label} answer`} inputMode="decimal" value={answers[id]??''} placeholder={cell.kind==='unknown'?`${cell.lower}–${cell.upper}`:undefined} onChange={e=>{setAnswers({...answers,[id]:e.target.value});setErrors([]);}} /></label>;})}{errors.length>0&&<div className="evidence-errors" role="alert">{errors.map((error,i)=><p key={i}>{error}</p>)}</div>}<button className="primary" type="submit">Update decision <span aria-hidden="true">→</span></button><small>Evidence updates the model.<br />Your preferences stay yours.</small></form></section>;
+}
