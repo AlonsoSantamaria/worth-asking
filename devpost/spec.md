@@ -418,3 +418,11 @@ The installed official [Devpost Learn Skill Pack](https://github.com/challengepo
 **Architecture disposition:** Diana granted PASS without blocking changes on 2026-10-24 and independently verified the initial scores/bounds, all three question VOIs, and evidence-driven reversal/robust STOP. Nonblocking observations: retain scenario-weight assumption disclosures, measure calculation performance through 4096 worlds, preserve the independent full-range STOP calculation, use the approved Worth Asking Team image as promotional reference, and preserve MVP boundaries. The actual image remains unavailable here; its visual description is carried forward without claiming inspection.
 
 **Remaining issues:** WA-03 now authorizes official `5-build` checklist preparation; review and explicit PO checklist approval are still required before implementation. Actual dependency versions/compatibility, measured performance, color contrast, and app tests must be verified in approved build slices. Inspect the approved team artwork when supplied, without adding a new approval gate. Any material change to the mathematical model, supported constraints, or approved product behavior returns for review. Do not start implementation at this checkpoint. No deployment to VESTA.
+
+## Sharing
+
+Public source repository: https://github.com/AlonsoSantamaria/worth-asking
+
+Live PREVIEW: https://worthasking.neovantia.live/
+
+The public repository contains a filtered snapshot of the tested WA-UX-01 application candidate, preserving source, tests, planning documents, and official Skill Pack artifacts. Operational inventories, private learner context, and the original operational Git history are excluded. This publication does not claim completion of unrecorded hands-on or learning checkpoints. No verified demo-video URL is recorded yet.
